@@ -1,6 +1,6 @@
 namespace :loadat do
   desc "Load data in <directory>/*.dat into MySQL database"
-  task :dir, :directory => :environment do |task, args|
+	task :dir, :ddirectory => :environment do |task, args|
     total_size = 0
 		dir = args[:directory] ? [args[:directory]] : [Rails.root, "tmp"]  
 		files = (dir + ["*.dat"]).flatten

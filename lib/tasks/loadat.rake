@@ -11,12 +11,12 @@ namespace :loadat do
       total_size += file_size
       if file_size > 0
         progress("Loading #{file_size} byte data into #{table_name}")
-        #execute("ALTER TABLE #{quoted_table_name} ENGINE = MyISAM")
-        #execute("TRUNCATE TABLE #{quoted_table_name}")
-        #execute("ALTER TABLE #{quoted_table_name} DISABLE KEYS")
-        #execute("LOAD DATA LOCAL INFILE '#{file}' INTO TABLE #{quoted_table_name}")
+        execute("ALTER TABLE #{quoted_table_name} ENGINE = MyISAM")
+        execute("TRUNCATE TABLE #{quoted_table_name}")
+        execute("ALTER TABLE #{quoted_table_name} DISABLE KEYS")
+        execute("LOAD DATA LOCAL INFILE '#{file}' INTO TABLE #{quoted_table_name}")
         progress("adding index to #{quoted_table_name}")
-        #execute("ALTER TABLE #{quoted_table_name} ENABLE KEYS")
+        execute("ALTER TABLE #{quoted_table_name} ENABLE KEYS")
       end
     end
     puts "[#{Time.now.to_s}] #{total_size} byte data loaded"

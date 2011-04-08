@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Joon Lee"]
   s.email       = ["seouri@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/seouri/loadat"
   s.summary     = %q{Ruby on Rails Rake task for loading data in text files into MySQL database.}
   s.description = %q{load_dat is a Ruby on Rails Rake task that loads data in <tablename>.dat into MySQL database that is defined in the database.yml file.}
 

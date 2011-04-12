@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.email       = ["seouri@gmail.com"]
   s.homepage    = "https://github.com/seouri/loadat"
   s.summary     = %q{Ruby on Rails Rake task for loading data in text files into MySQL database.}
-  s.description = %q{load_dat is a Ruby on Rails Rake task that loads data in <tablename>.dat into MySQL database that is defined in the database.yml file.}
+  s.description = %q{loaddat is a Ruby on Rails Rake task that loads data in <tablename>.dat into MySQL database that is defined in the database.yml file.}
 
   s.rubyforge_project = "loadat"
 

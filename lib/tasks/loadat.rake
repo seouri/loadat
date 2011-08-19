@@ -1,6 +1,6 @@
 namespace :loadat do
   desc "Load data in <directory>/*.dat into MySQL database"
-	task :dir, :directory, :needs => :environment do |task, args|
+	task :dir, [:directory] => [:environment] do |task, args|
     total_size = 0
 		dir = args[:directory] ? [args[:directory]] : [Rails.root, "tmp"]  
 		files = (dir + ["*.dat"]).flatten
@@ -17,9 +17,11 @@ namespace :loadat do
         execute("LOAD DATA LOCAL INFILE '#{file}' INTO TABLE #{quoted_table_name}")
         progress("adding index to #{quoted_table_name}")
         execute("ALTER TABLE #{quoted_table_name} ENABLE KEYS")
+        progress("analyzing #{quoted_table_name}")
+        execute("ANALYZE TABLE #{quoted_table_name}")
       end
     end
-    puts "[#{Time.now.to_s}] #{total_size} byte data loaded"
+    progress("#{total_size} byte data loaded")
   end
 
   def progress(message)
